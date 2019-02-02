@@ -85,12 +85,12 @@
 \else% pdfLaTeX, not supported in Linux
     \cuz@pdftextrue%
 \fi\fi
-
-\RequirePackage[cmintegrals]{newtxmath}% load after math packages
+\RequirePackage{amsmath,mathtools,amsfonts}%
 \ifcuz@pdftex
     \RequirePackage[utf8]{inputenc}% set input encoding, document must use utf-8 encoding
     \RequirePackage[T1]{fontenc}% set font encoding to enable modern font encoding
     \RequirePackage{newtxtext}%
+    \RequirePackage[cmintegrals]{newtxmath}% load after math packages
 \else
     \RequirePackage{fontspec}% support calling system fonts
     \ifcuz@xetex
@@ -113,6 +113,14 @@
     \fi
 \fi
 
-
+\AtBeginDocument{
+    \makeatletter
+    \ifcuz@option@lighttheme
+        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{images/cuzlogo}}
+    \else
+        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{images/cuzlogo-brown}}
+    \fi
+    \makeatother
+}
 
 \endinput%
