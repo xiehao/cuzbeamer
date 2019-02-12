@@ -24,7 +24,7 @@
 }
 \DeclareStringOption[dark]{colortheme}[dark]% light or dark (default)
 \DeclareStringOption[wide]{pagestyle}[wide]% normal, wide (default) or wider
-\DeclareStringOption[right]{align}[right]% left, center or right (default)
+\DeclareStringOption[left]{titlealignment}[left]% left, center or right (default)
 \DeclareDefaultOption{%
     \PassOptionsToClass{\CurrentOption}{beamer}%
 }%
@@ -147,5 +147,72 @@
 }{%
     \end{frame}
 }%
+%---------------------------------------------------------------------------%
+%->> Customize the alignment of elements at the cover page
+%---------------------------------------------------------------------------%
+\setbeamertemplate{title}{
+    \ifxstringequal{\cuz@option@titlealignment}{left}{%
+        \raggedright%
+    }{\ifxstringequal{\cuz@option@titlealignment}{center}{%
+        \centering%
+    }{%
+        \raggedleft%
+    }}%
+    \linespread{1.0}%
+    \inserttitle%
+    \par%
+    \vspace*{0.5em}%
+}
+\setbeamertemplate{subtitle}{
+    \ifxstringequal{\cuz@option@titlealignment}{left}{%
+        \raggedright%
+    }{\ifxstringequal{\cuz@option@titlealignment}{center}{%
+        \centering%
+    }{%
+        \raggedleft%
+    }}%
+    \insertsubtitle%
+    \par%
+    \vspace*{0.5em}%
+}
+% \newcommand{\email}[1][]{\gdef\cuz@email{#1}}%
+\setbeamertemplate{author}{
+    \ifxstringequal{\cuz@option@titlealignment}{left}{%
+        \raggedright%
+    }{\ifxstringequal{\cuz@option@titlealignment}{center}{%
+        \centering%
+    }{%
+        \raggedleft%
+    }}%
+    \vspace*{2em}%
+    \insertauthor%
+    \par%
+    % {\scriptsize \href{mailto:\cuz@email}{\itshape \cuz@email}}%
+    % \par%
+    \vspace*{0.25em}%
+}
+\setbeamertemplate{date}{
+    \ifxstringequal{\cuz@option@titlealignment}{left}{%
+        \raggedright%
+    }{\ifxstringequal{\cuz@option@titlealignment}{center}{%
+        \centering%
+    }{%
+        \raggedleft%
+    }}%
+    \insertdate%
+    \par%
+}
+\setbeamertemplate{institute}{
+    \ifxstringequal{\cuz@option@titlealignment}{left}{%
+        \raggedright%
+    }{\ifxstringequal{\cuz@option@titlealignment}{center}{%
+        \centering%
+    }{%
+        \raggedleft%
+    }}%
+    \vspace*{0.02em}%
+    \insertinstitute%
+    \par%
+}
 %---------------------------------------------------------------------------%
 \endinput%
