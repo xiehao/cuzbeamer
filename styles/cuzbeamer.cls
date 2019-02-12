@@ -1,4 +1,4 @@
-   %---------------------------------------------------------------------------%
+%---------------------------------------------------------------------------%
 %-                                                                         -%
 %-                           Document Class                                -%
 %-                                                                         -%
@@ -13,38 +13,39 @@
 %---------------------------------------------------------------------------%
 \NeedsTeXFormat{LaTeX2e}%
 \ProvidesClass{cuzbeamer}[2019/02/01 v1.0 LaTeX Document Class]%
+
 %---------------------------------------------------------------------------%
 %->> Declare options
 %---------------------------------------------------------------------------%
-\newif\ifcuz@option@lighttheme \cuz@option@lightthemefalse%
-\DeclareOption{light}{%
-    \cuz@option@lightthemetrue%
+\RequirePackage{kvoptions}% use key-value options
+\SetupKeyvalOptions{
+    family=cuz,
+    prefix=cuz@option@
 }
-\DeclareOption{wide}{
-    \PassOptionsToClass{aspectratio=1610}{beamer}
-}
-\DeclareOption*{
-    \PassOptionsToClass{\CurrentOption}{beamer}
-}
+\DeclareStringOption[dark]{colortheme}[dark]% light or dark (default)
+\DeclareStringOption[wide]{pagestyle}[wide]% normal, wide (default) or wider
+\DeclareStringOption[right]{align}[right]% left, center or right (default)
+\DeclareDefaultOption{%
+    \PassOptionsToClass{\CurrentOption}{beamer}%
+}%
 %-
 %-> Terminates all options processing
 %-
-\ProcessOptions\relax%
+\ProcessKeyvalOptions{cuz}\relax%
 %---------------------------------------------------------------------------%
 %->> Load class information
 %---------------------------------------------------------------------------%
+\RequirePackage{etoolbox}% a toolbox of programming facilities
+\newcommand{\ifxstringequal}{\expandafter\ifstrequal\expandafter}% expansion control
+\ifxstringequal{\cuz@option@pagestyle}{normal}{%
+    \PassOptionsToClass{aspectratio=43}{beamer}%
+}{\ifxstringequal{\cuz@option@pagestyle}{wide}{%
+    \PassOptionsToClass{aspectratio=1610}{beamer}%
+}{%
+    \PassOptionsToClass{aspectratio=169}{beamer}%
+}}%
 \LoadClass[UTF8,10pt]{beamer}%
 \RequirePackage[zihao=false]{ctex}%
-%---------------------------------------------------------------------------%
-%->> Theme configuration
-%---------------------------------------------------------------------------%
-\usetheme{metropolis}%
-\ifcuz@option@lighttheme%
-    \metroset{background=light}%
-\else%
-    \metroset{background=dark}%
-\fi%
-\RequirePackage{appendixnumberbeamer}
 %---------------------------------------------------------------------------%
 %->> CJK Languages for different platforms and compilers
 %---------------------------------------------------------------------------%
@@ -59,12 +60,10 @@
 \newif\ifcuz@windows \cuz@windowsfalse% 
 \newif\ifcuz@mac \cuz@macfalse% 
 \newif\ifcuz@linux \cuz@linuxfalse% 
-\RequirePackage{etoolbox}% a toolbox of programming facilities
-\newcommand{\eifstringequal}{\expandafter\ifstrequal\expandafter}% expansion control
-\eifstringequal{\cuz@fontset}{windows}{
+\ifxstringequal{\cuz@fontset}{windows}{
     \cuz@windowstrue%
     % \ctexset{fontset=windowsnew}%
-}{\eifstringequal{\cuz@fontset}{mac}{
+}{\ifxstringequal{\cuz@fontset}{mac}{
     \cuz@mactrue
     % \ctexset{fontset=macnew}%
 }{
@@ -113,6 +112,16 @@
     \fi
 \fi
 %---------------------------------------------------------------------------%
+%->> Theme configuration
+%---------------------------------------------------------------------------%
+\usetheme{metropolis}%
+\RequirePackage{appendixnumberbeamer}% 
+\ifxstringequal{\cuz@option@colortheme}{light}{
+    \metroset{background=light}%
+}{%
+    \metroset{background=dark}%
+}%
+%---------------------------------------------------------------------------%
 %->> Some code to be executed at the beginning of the document
 %---------------------------------------------------------------------------%
 \AtBeginDocument{
@@ -120,11 +129,11 @@
     %-
     %-> The university logo in the title page
     %-
-    \ifcuz@option@lighttheme
-        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{images/cuzlogo}}
-    \else
-        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{images/cuzlogo-brown}}
-    \fi
+    \ifxstringequal{\cuz@option@colortheme}{light}{%
+        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{images/cuzlogo}}%
+    }{%
+        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{images/cuzlogo-brown}}%
+    }%
     \makeatother
 }
 %---------------------------------------------------------------------------%
