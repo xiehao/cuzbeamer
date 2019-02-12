@@ -175,7 +175,7 @@
     \par%
     \vspace*{0.5em}%
 }
-% \newcommand{\email}[1][]{\gdef\cuz@email{#1}}%
+\newcommand{\email}[1]{\gdef\cuz@email{#1}}%
 \setbeamertemplate{author}{
     \ifxstringequal{\cuz@option@titlealignment}{left}{%
         \raggedright%
@@ -187,8 +187,8 @@
     \vspace*{2em}%
     \insertauthor%
     \par%
-    % {\scriptsize \href{mailto:\cuz@email}{\itshape \cuz@email}}%
-    % \par%
+    {\scriptsize \href{mailto:\cuz@email}{\itshape \cuz@email}}%
+    \par%
     \vspace*{0.25em}%
 }
 \setbeamertemplate{date}{
