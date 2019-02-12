@@ -1,4 +1,4 @@
-%---------------------------------------------------------------------------%
+   %---------------------------------------------------------------------------%
 %-                                                                         -%
 %-                           Document Class                                -%
 %-                                                                         -%
@@ -112,9 +112,14 @@
         \fi
     \fi
 \fi
-
+%---------------------------------------------------------------------------%
+%->> Some code to be executed at the beginning of the document
+%---------------------------------------------------------------------------%
 \AtBeginDocument{
     \makeatletter
+    %-
+    %-> The university logo in the title page
+    %-
     \ifcuz@option@lighttheme
         \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{images/cuzlogo}}
     \else
@@ -122,5 +127,16 @@
     \fi
     \makeatother
 }
-
+%---------------------------------------------------------------------------%
+%->> New environments for convenience
+%---------------------------------------------------------------------------%
+%-
+%-> The new standout environment for standout frames
+%-
+\newenvironment{standout}[1][]{%
+    \begin{frame}[standout]{#1}
+}{%
+    \end{frame}
+}%
+%---------------------------------------------------------------------------%
 \endinput%
