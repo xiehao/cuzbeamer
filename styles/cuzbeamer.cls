@@ -106,7 +106,7 @@
         \setsansfont[NFSSFamily=entextsf]{Palatino Linotype}% Helvetica
         \ifcuz@windows%
             \setmonofont[NFSSFamily=entexttt]{Consolas}%
-        \else
+        \else% for mac
             \setmonofont[NFSSFamily=entexttt]{Monaco}%
         \fi
     \fi
@@ -137,8 +137,9 @@
     \makeatother
 }
 %---------------------------------------------------------------------------%
-%->> New environments for convenience
+%->> New environments and macros for convenience
 %---------------------------------------------------------------------------%
+\RequirePackage{calc}
 %-
 %-> The new standout environment for standout frames
 %-
@@ -146,6 +147,21 @@
     \begin{frame}[standout]{#1}
 }{%
     \end{frame}
+}%
+%-
+%-> The new bicolumns macro for two columns environment
+%-
+\newcommand{\bicolumns}[3][0.618]{%
+    \newlength{\leftwidth}%
+    \setlength{\leftwidth}{#1\textwidth}%
+    \newlength{\rightwidth}%
+    \setlength{\rightwidth}{\textwidth-\leftwidth}%
+    \begin{columns}[T,onlytextwidth]
+        \column{\leftwidth}%
+        #2%
+        \column{\rightwidth}%
+        #3%
+    \end{columns}
 }%
 %---------------------------------------------------------------------------%
 %->> Customize the alignment of elements at the cover page

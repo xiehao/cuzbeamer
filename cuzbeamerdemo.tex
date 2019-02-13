@@ -14,7 +14,7 @@
         \tableofcontents
     \end{frame}
 
-    \section{第一部分}
+    \section{简介/前情回顾}
 
     \begin{frame}
         \begin{block}{标题}
@@ -26,30 +26,32 @@
         \end{block}
     \end{frame}
 
-    \section{第二部分}
+    \section{进入正题}
 
     \begin{frame}
-        \begin{alertblock}{警告标题}
-            \begin{enumerate}
-                \item 第一项
-                \item 第二项
-                \item 第三项
-            \end{enumerate}
-        \end{alertblock}
+        \bicolumns[0.5]{%
+            \begin{alertblock}{警告标题}
+                \begin{enumerate}
+                    \item 第一项
+                    \item 第二项
+                    \item 第三项
+                \end{enumerate}
+            \end{alertblock}
+        }{%
+            \begin{exampleblock}{例子标题}
+                \begin{enumerate}
+                    \item 第一项
+                    \item 第二项
+                    \item 第三项
+                \end{enumerate}
+            \end{exampleblock}
+        }%
     \end{frame}
 
-    \begin{frame}
-        \begin{exampleblock}{例子标题}
-            \begin{enumerate}
-                \item 第一项
-                \item 第二项
-                \item 第三项
-            \end{enumerate}
-        \end{exampleblock}
-    \end{frame}
+    \section{小结}
 
-    \begin{frame}[standout]
+    \begin{standout}[]
         谢谢观看！
-    \end{frame}
+    \end{standout}
 
 \end{document}
