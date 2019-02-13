@@ -181,6 +181,23 @@
 \RequirePackage{ctable,multirow}% captions in tables (using booktabs)
 \RequirePackage{caption}% extra caption features
 \graphicspath{{./images/}}% set the default graphic path
+\ifcuz@option@minted%
+    \RequirePackage{minted}%
+    \ifxstringequal{\cuz@option@colortheme}{light}{%
+        \usemintedstyle{friendly}%
+    }{%
+        \usemintedstyle{monokai}%
+    }%
+    \setminted{%
+        autogobble,% automatically remove the spaces to the left of the code
+        linenos=true,% show line numbers
+        fontsize=\footnotesize,% smaller font size
+        escapeinside=@@,% insert latex code between @ and @
+        frame=lines,% frame styles: none or lines
+        % numbers=both,% show line numbers on: left, right, both or none
+        mathescape=true,% insert math code
+    }%
+\fi
 %---------------------------------------------------------------------------%
 %->> Customize the alignment of elements at the cover page
 %---------------------------------------------------------------------------%
