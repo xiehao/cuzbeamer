@@ -25,6 +25,7 @@
 \DeclareStringOption[dark]{colortheme}[dark]% light or dark (default)
 \DeclareStringOption[wide]{pagestyle}[wide]% normal, wide (default) or wider
 \DeclareStringOption[left]{titlealignment}[left]% left, center or right (default)
+\DeclareBoolOption[true]{minted}% use minted package
 \DeclareDefaultOption{%
     \PassOptionsToClass{\CurrentOption}{beamer}%
 }%
@@ -141,9 +142,6 @@
 %->> New environments and macros for convenience
 %---------------------------------------------------------------------------%
 \RequirePackage{calc}% arithmetic calculation
-\RequirePackage{ctable,multirow}% captions in tables (using booktabs)
-\RequirePackage{caption}% extra caption features
-\graphicspath{{./images/}}% set the default graphic path
 %-
 %-> The new standout environment for standout frames
 %-
@@ -153,20 +151,36 @@
     \end{frame}
 }%
 %-
+%-> The new fragile environment for fragile frames
+%-
+\newenvironment{fragile}[1][]{%
+    %- the environment option tells beamer to look the new name "fragile",
+    %- instead of the original name "frame"
+    \begin{frame}[fragile,environment=fragile]{#1}
+}{%
+    \end{frame}
+}%
+%-
 %-> The new bicolumns macro for two columns environment
 %-
-\newlength{\leftwidth}%
-\newlength{\rightwidth}%
+\newlength{\cuz@leftwidth}%
+\newlength{\cuz@rightwidth}%
 \newcommand{\bicolumns}[3][0.618]{%
-    \setlength{\leftwidth}{#1\textwidth}%
-    \setlength{\rightwidth}{\textwidth-\leftwidth}%
+    \setlength{\cuz@leftwidth}{#1\textwidth}%
+    \setlength{\cuz@rightwidth}{\textwidth-\cuz@leftwidth}%
     \begin{columns}[T,onlytextwidth]
-        \column{\leftwidth}%
+        \column{\cuz@leftwidth}%
         #2%
-        \column{\rightwidth}%
+        \column{\cuz@rightwidth}%
         #3%
     \end{columns}
 }%
+%---------------------------------------------------------------------------%
+%->> Useful packages for some basic elements
+%---------------------------------------------------------------------------%
+\RequirePackage{ctable,multirow}% captions in tables (using booktabs)
+\RequirePackage{caption}% extra caption features
+\graphicspath{{./images/}}% set the default graphic path
 %---------------------------------------------------------------------------%
 %->> Customize the alignment of elements at the cover page
 %---------------------------------------------------------------------------%
