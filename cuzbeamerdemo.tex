@@ -9,7 +9,7 @@
         Chapter Name
     \end{standout}
 
-    \begin{frame}
+    \begin{frame}{大纲}
         \setbeamertemplate{section in toc}[sections numbered]
         \tableofcontents
     \end{frame}
@@ -45,6 +45,46 @@
                     \item 第三项
                 \end{enumerate}
             \end{exampleblock}
+        }%
+    \end{frame}
+
+    \begin{frame}
+        \bicolumns{%
+        \begin{block}{图片}
+            \begin{center}
+                \includegraphics[width=0.65\textwidth]{cuzlogo}\\
+                \includegraphics[width=0.65\textwidth]{cuzlogo-dark}\\
+                \includegraphics[width=0.65\textwidth]{cuzlogo-light}\\
+                \includegraphics[width=0.65\textwidth]{cuzlogo-brown}\\
+            \end{center}
+        \end{block}\pause
+        }{%
+        \begin{block}{表格}
+            \begin{table}\small
+                % \caption{样表}
+                % \caption*{
+                %   表例里甚至可以加表格：
+                %   \begin{tabular}{l l}
+                %     \toprule
+                %     第一项 & 解释一 \\
+                %     \bottomrule
+                %   \end{tabular}
+                % }
+                \begin{tabular}{llr}
+                    \toprule
+                    \multicolumn{2}{c}{项目} & \multirow{2}{*}{价格 (\$)} \\
+                    \cmidrule(r){1-2}
+                    动物 & 描述 &  \\
+                    \midrule
+                    \multirow{2}{*}{蚋蚊} & 每克 & 13.65 \\
+                                            & 每只 & 0.01 \\
+                    角马                    & 标本 & 92.50 \\
+                    鸸鹋                    & 标本 & 33.33 \\
+                    犰狳                    & 冷冻 & 8.99 \\
+                    \bottomrule
+                \end{tabular}
+            \end{table}
+        \end{block}
         }%
     \end{frame}
 

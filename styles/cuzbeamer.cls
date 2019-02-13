@@ -116,6 +116,7 @@
 %---------------------------------------------------------------------------%
 \usetheme{metropolis}%
 \RequirePackage{appendixnumberbeamer}% 
+\metroset{numbering=fraction}%
 \ifxstringequal{\cuz@option@colortheme}{light}{
     \metroset{background=light}%
 }{%
@@ -139,7 +140,10 @@
 %---------------------------------------------------------------------------%
 %->> New environments and macros for convenience
 %---------------------------------------------------------------------------%
-\RequirePackage{calc}
+\RequirePackage{calc}% arithmetic calculation
+\RequirePackage{ctable,multirow}% captions in tables (using booktabs)
+\RequirePackage{caption}% extra caption features
+\graphicspath{{./images/}}% set the default graphic path
 %-
 %-> The new standout environment for standout frames
 %-
@@ -151,10 +155,10 @@
 %-
 %-> The new bicolumns macro for two columns environment
 %-
+\newlength{\leftwidth}%
+\newlength{\rightwidth}%
 \newcommand{\bicolumns}[3][0.618]{%
-    \newlength{\leftwidth}%
     \setlength{\leftwidth}{#1\textwidth}%
-    \newlength{\rightwidth}%
     \setlength{\rightwidth}{\textwidth-\leftwidth}%
     \begin{columns}[T,onlytextwidth]
         \column{\leftwidth}%
