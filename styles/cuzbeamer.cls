@@ -48,6 +48,17 @@
 \LoadClass[UTF8,10pt]{beamer}%
 \RequirePackage[zihao=false]{ctex}%
 %---------------------------------------------------------------------------%
+%->> Theme configuration
+%---------------------------------------------------------------------------%
+\usetheme{metropolis}%
+\RequirePackage{appendixnumberbeamer}% 
+\metroset{numbering=fraction}%
+\ifxstringequal{\cuz@option@colortheme}{light}{
+    \metroset{background=light}%
+}{%
+    \metroset{background=dark}%
+}%
+%---------------------------------------------------------------------------%
 %->> CJK Languages for different platforms and compilers
 %---------------------------------------------------------------------------%
 \RequirePackage{expl3}% LaTeX3 programming environment
@@ -112,17 +123,6 @@
         \fi
     \fi
 \fi
-%---------------------------------------------------------------------------%
-%->> Theme configuration
-%---------------------------------------------------------------------------%
-\usetheme{metropolis}%
-\RequirePackage{appendixnumberbeamer}% 
-\metroset{numbering=fraction}%
-\ifxstringequal{\cuz@option@colortheme}{light}{
-    \metroset{background=light}%
-}{%
-    \metroset{background=dark}%
-}%
 %---------------------------------------------------------------------------%
 %->> Some code to be executed at the beginning of the document
 %---------------------------------------------------------------------------%
@@ -189,11 +189,12 @@
     \endgroup
     \setlength{\cuz@leftwidth}{#1\textwidth}
     \setlength{\cuz@rightwidth}{\textwidth-\cuz@leftwidth}
-    \begin{columns}[T]
+    \begin{columns}[T,onlytextwidth]
         \begin{column}{\cuz@leftwidth}
             \scantokens{#2\noexpand}%
             \expandafter\cuz@cleanup%
         \end{column}
+        % \vrule{}% vertical line between two columns
         \begin{column}{\cuz@rightwidth}
             \scantokens{#3\noexpand}%
             \cuz@cleanup%
