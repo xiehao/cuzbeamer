@@ -248,6 +248,103 @@
         font=\bfseries\ttfamily\tiny
     }
 }
+\usetikzlibrary{%
+    intersections,
+    through,
+    % shapes.geometric,
+    % shapes.misc,
+    positioning,
+    calc,
+    % arrows,
+    graphs
+}
+\ifxstringequal{\cuz@option@colortheme}{light}{
+    \tikzstyle{terminal} = [
+        rounded rectangle, thin,
+        font = \ttfamily\footnotesize, 
+        draw = black!50,
+        text = black,
+        text height = 1.4ex, text depth = .25ex
+    ]%
+    \tikzstyle{nonterminal} = [
+        rectangle, thin,
+        font = \ttfamily\footnotesize,
+        draw = black!50,
+        text = black,
+        text height = 1.4ex, text depth = .25ex
+    ]%
+    \tikzstyle{status box} = [
+        rounded rectangle, very thin,
+        font = \tiny,
+        draw = red!50!black!50,
+        top color = black, bottom color = red!20!black!50,
+        text = black,
+        text height = .7ex, text depth = .1ex
+    ]%
+    \tikzstyle{motion box} = [
+        rectangle, minimum size = 3mm, very thin,
+        font = \ttfamily\tiny,
+        draw = blue!50!black!50,
+        top color = black, bottom color = blue!20!black!50,
+        text = black,
+        text height = .7ex, text depth = .1ex
+    ]%
+    \tikzstyle{comment box} = [
+        rectangle, very thin,
+        font = \ttfamily\footnotesize,
+        text = black!70,
+        text height = 1.4ex, text depth = .25ex
+    ]%
+    \tikzstyle{point} = [ circle, inner sep = 0pt, minimum size = 0pt ] %
+    \tikzstyle{skip loop} = [ to path = { -- ++(#1, 0) |- (\tikztotarget) } ]%
+    \tikzstyle{hv path} = [ to path = { -| (\tikztotarget) } ] %
+    \tikzstyle{vh path} = [ to path = { |- (\tikztotarget) } ] %
+    \tikzstyle{every new ->} = [ shorten >= 1pt ] %
+    \tikzstyle{graphs/every graph} = [ edges = rounded corners ] %
+}{
+    \tikzstyle{terminal} = [
+        rounded rectangle, thin,
+        font = \ttfamily\footnotesize, 
+        draw = black!50,
+        text = white,
+        text height = 1.4ex, text depth = .25ex
+    ]%
+    \tikzstyle{nonterminal} = [
+        rectangle, thin,
+        font = \ttfamily\footnotesize,
+        draw = black!50,
+        text = white,
+        text height = 1.4ex, text depth = .25ex
+    ]%
+    \tikzstyle{status box} = [
+        rounded rectangle, very thin,
+        font = \tiny,
+        draw = red!50!black!50,
+        top color = black, bottom color = red!20!black!50,
+        text = white,
+        text height = .7ex, text depth = .1ex
+    ]%
+    \tikzstyle{motion box} = [
+        rectangle, minimum size = 3mm, very thin,
+        font = \ttfamily\tiny,
+        draw = blue!50!black!50,
+        top color = black, bottom color = blue!20!black!50,
+        text = white,
+        text height = .7ex, text depth = .1ex
+    ]%
+    \tikzstyle{comment box} = [
+        rectangle, very thin,
+        font = \ttfamily\footnotesize,
+        text = black!30,
+        text height = 1.4ex, text depth = .25ex
+    ]%
+    \tikzstyle{point} = [ circle, inner sep = 0pt, minimum size = 0pt ] %
+    \tikzstyle{skip loop} = [ to path = { -- ++(#1, 0) |- (\tikztotarget) } ]%
+    \tikzstyle{hv path} = [ to path = { -| (\tikztotarget) } ] %
+    \tikzstyle{vh path} = [ to path = { |- (\tikztotarget) } ] %
+    \tikzstyle{every new ->} = [ shorten >= 1pt ] %
+    \tikzstyle{graphs/every graph} = [ edges = rounded corners ] %
+}
 %---------------------------------------------------------------------------%
 %->> Customize the alignment of elements at the cover page
 %---------------------------------------------------------------------------%

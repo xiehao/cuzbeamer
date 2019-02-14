@@ -1,4 +1,4 @@
-\documentclass[colortheme=light]{styles/cuzbeamer}
+\documentclass{styles/cuzbeamer}
 
 \begin{document}
     \input{initialization.tex}
@@ -148,6 +148,35 @@
             \end{center}
         \end{block}
     \end{frame}
+
+    \begin{fragile}[]
+        \begin{block}{状态图}
+            \begin{center}
+                \begin{tikzpicture}[ >=stealth, ->, thick, black!50 ]
+                    \matrix[row sep=20mm, column sep=22mm] { %
+                        % First row:
+                        & \node (have-money) [terminal] {金额充足}; & \\ %
+                        % Second row:
+                        \node (sold-out) [terminal] {糖果售罄}; & %
+                        \node (no-money) [terminal] {金额不足}; & %
+                        \node (sold) [terminal] {售出糖果}; \\ %
+                    }; %
+                    \begin{scope}[every node/.style={midway,auto,font=\scriptsize}]
+                        \draw (have-money) to [bend left] node [align=center]
+                        {\mintinline{java}{退回}\\\mintinline{java}{25分钱}} (no-money); %
+                        \draw (no-money) to [bend left] node [align=center]
+                        {\mintinline{java}{投入}\\\mintinline{java}{25分钱}} (have-money); %
+                        \draw (have-money) to [bend left] node [align=center]
+                        {\mintinline{java}{转动曲柄}} (sold); %
+                        \draw (sold) -- node [align=center] %
+                        {\mintinline{java}{发放糖果}\\\mintinline{java}{糖果数>0}} (no-money); %
+                        \draw (sold) to [bend left] node [align=center] %
+                        {\mintinline{java}{发放糖果}\\\mintinline{java}{糖果数=0}} (sold-out); %
+                    \end{scope}
+                \end{tikzpicture}
+            \end{center}
+        \end{block}
+      \end{fragile}
 
     \section{小结}
 
