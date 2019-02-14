@@ -28,8 +28,8 @@
 
     \section{进入正题}
 
-    \begin{frame}
-        \bicolumns[0.5]{%
+    \begin{fragile}
+        \bicolumns[0.5]{
             \begin{alertblock}{警告标题}
                 \begin{enumerate}
                     \item 第一项
@@ -37,7 +37,7 @@
                     \item 第三项
                 \end{enumerate}
             \end{alertblock}
-        }{%
+        }{
             \begin{exampleblock}{例子标题}
                 \begin{enumerate}
                     \item 第一项
@@ -45,20 +45,20 @@
                     \item 第三项
                 \end{enumerate}
             \end{exampleblock}
-        }%
-    \end{frame}
+        }
+    \end{fragile}
 
-    \begin{frame}
-        \bicolumns{%
-        \begin{block}{图片}
-            \begin{center}
-                \includegraphics[width=0.65\textwidth]{cuzlogo}\\
-                \includegraphics[width=0.65\textwidth]{cuzlogo-dark}\\
-                \includegraphics[width=0.65\textwidth]{cuzlogo-light}\\
-                \includegraphics[width=0.65\textwidth]{cuzlogo-brown}\\
-            \end{center}
-        \end{block}\pause
-        }{%
+    \begin{fragile}
+        \bicolumns{
+            \begin{block}{图片}
+                \begin{center}
+                    \includegraphics[width=0.65\textwidth]{cuzlogo}\\
+                    \includegraphics[width=0.65\textwidth]{cuzlogo-dark}\\
+                    \includegraphics[width=0.65\textwidth]{cuzlogo-light}\\
+                    \includegraphics[width=0.65\textwidth]{cuzlogo-brown}\\
+                \end{center}
+            \end{block}
+        }{
         \begin{block}{表格}
             \begin{table}\small
                 % \caption{样表}
@@ -85,25 +85,36 @@
                 \end{tabular}
             \end{table}
         \end{block}
-        }%
-    \end{frame}
+        }
+    \end{fragile}
 
     \begin{fragile}[]
         \begin{block}{代码}
-            \begin{minted}{c++}
-                #include <iostream>
-                // 测试一下数学公式：$\int_{-\infty}^{+\infty}{f(x)\mathrm{d}x}$
-                auto main(int argc, char const **argv) {
-                    std::cout << "Test" << std::endl;
-                    return 0;
-                }
-            \end{minted}
+            \bicolumns[0.5]{
+                \begin{minted}{c++}
+                    // 西加加
+                    #include <iostream>
+                    
+                    auto main(int argc, char const **argv) {
+                        std::cout << "Test" << std::endl;
+                        return 0;
+                    }
+                \end{minted}
+            }{
+                \begin{minted}{java}
+                    // 爪哇
+                    class Test {
+                        public static void main(String[] args) {
+                            System.out.println("Test");
+                        }
+                    }
+                \end{minted}
+                \begin{minted}{python}
+                    # 蟒蛇，测试数学公式：$\int_{-\infty}^{+\infty}{f(x)\mathrm{d}x}$
+                    print('Test')
+                \end{minted}
+            }
         \end{block}
-        \bicolumns{
-
-        }{
-
-        }
     \end{fragile}
 
     \section{小结}

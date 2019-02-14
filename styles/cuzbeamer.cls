@@ -162,19 +162,45 @@
 }%
 %-
 %-> The new bicolumns macro for two columns environment
+%-> NOTE:
+%-> 1. This command MUST be used within the fragile environment,
+%-> 2. NO extra character is allowed in the same line of "{" and "}" of the
+%->    last two arguments, not even a comment!!
+%-> WRONG:
+%->     \bicolumns[0.5]{left}{right}
+%-> RIGHT:
+%->     \bicolumns[0.5]{
+%->         left
+%->     }{
+%->         right
+%->     }
 %-
-\newlength{\cuz@leftwidth}%
-\newlength{\cuz@rightwidth}%
-\newcommand{\bicolumns}[3][0.618]{%
-    \setlength{\cuz@leftwidth}{#1\textwidth}%
-    \setlength{\cuz@rightwidth}{\textwidth-\cuz@leftwidth}%
-    \begin{columns}[T,onlytextwidth]
-        \column{\cuz@leftwidth}%
-        #2%
-        \column{\cuz@rightwidth}%
-        #3%
+\newlength{\cuz@leftwidth}
+\newlength{\cuz@rightwidth}
+\newcommand{\bicolumns}{%
+    \begingroup
+    \let\do\@makeother\dospecials
+    \catcode`\{=1
+    \catcode`\}=2
+    \endlinechar`\^^J
+    \bicolumns@implement
+}
+\newcommand{\bicolumns@implement}[3][0.618]{
+    \endgroup
+    \setlength{\cuz@leftwidth}{#1\textwidth}
+    \setlength{\cuz@rightwidth}{\textwidth-\cuz@leftwidth}
+    \begin{columns}[T]
+        \begin{column}{\cuz@leftwidth}
+            \scantokens{#2\noexpand}%
+            \expandafter\cuz@cleanup%
+        \end{column}
+        \begin{column}{\cuz@rightwidth}
+            \scantokens{#3\noexpand}%
+            \cuz@cleanup%
+        \end{column}
     \end{columns}
-}%
+}
+\def\cuz@cleanup#1^^J{#1}
 %---------------------------------------------------------------------------%
 %->> Useful packages for some basic elements
 %---------------------------------------------------------------------------%
