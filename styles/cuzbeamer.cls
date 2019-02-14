@@ -225,6 +225,29 @@
         mathescape=true,% insert math code
     }%
 \fi
+\RequirePackage{styles/tikz-uml}% tikz-uml for diagrams (class, use case,
+                                % state transitions, sequence and component)
+\ifxstringequal{\cuz@option@colortheme}{light}{
+    \tikzumlset{%
+        % text=white,
+        % draw=white,
+        % fill class=black!80,
+        % fill template=blue!80,
+        % fill note=darkgray!100,
+        % fill package=black!80,
+        font=\bfseries\ttfamily\tiny
+    }
+}{
+    \tikzumlset{%
+        text=white,
+        draw=white,
+        fill class=black!80,
+        fill template=blue!80,
+        fill note=darkgray!100,
+        fill package=black!80,
+        font=\bfseries\ttfamily\tiny
+    }
+}
 %---------------------------------------------------------------------------%
 %->> Customize the alignment of elements at the cover page
 %---------------------------------------------------------------------------%

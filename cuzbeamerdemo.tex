@@ -1,4 +1,4 @@
-\documentclass{styles/cuzbeamer}
+\documentclass[colortheme=light]{styles/cuzbeamer}
 
 \begin{document}
     \input{initialization.tex}
@@ -28,25 +28,34 @@
 
     \section{进入正题}
 
-    \begin{fragile}
-        \bicolumns[0.5]{
+    \begin{frame}
+        \begin{columns}[T,onlytextwidth]
+            \column{0.3\textwidth}
+            \begin{block}{普通标题}
+                \begin{itemize}
+                    \item 普通内容
+                    \item 普通内容
+                    \item 普通内容
+                \end{itemize}
+            \end{block}
+            \column{0.3\textwidth}
             \begin{alertblock}{警告标题}
                 \begin{enumerate}
-                    \item 此事须当多加谨慎
-                    \item 此事须当多加谨慎
-                    \item 此事须当多加谨慎
+                    \item 警告内容
+                    \item 警告内容
+                    \item 警告内容
                 \end{enumerate}
             \end{alertblock}
-        }{
+            \column{0.3\textwidth}
             \begin{exampleblock}{例子标题}
                 \begin{enumerate}
-                    \item 第一项
-                    \item 第二项
-                    \item 第三项
+                    \item 例子内容
+                    \item 例子内容
+                    \item 例子内容
                 \end{enumerate}
             \end{exampleblock}
-        }
-    \end{fragile}
+        \end{columns}
+    \end{frame}
 
     \begin{fragile}
         \bicolumns{
@@ -116,6 +125,29 @@
             }
         \end{block}
     \end{fragile}
+
+    \begin{frame}
+        \begin{block}{类图}
+            \begin{center}
+                \begin{tikzpicture}
+                    \umlemptyclass[x=0,y=1,type=interface]{Vehicle} %
+                    \umlemptyclass[x=1,y=-2]{Bicycle} \umlemptyclass[x=-1,y=-2]{Car} %
+                    \umlemptyclass[x=-4,y=-1]{Tyre} \umlemptyclass[x=-4,y=-3]{Engine} %
+                    \umlemptyclass[x=-1,y=-4]{SUV} \umlemptyclass[x=4,y=-2]{Student} %
+                    \umlemptyclass[x=4,y=0]{School} \umlemptyclass[x=4,y=-4]{ID} %
+                    
+                    \umlimpl[geometry=|-|]{Car}{Vehicle} %
+                    \umlimpl[geometry=|-|]{Bicycle}{Vehicle} %
+                    \umlcompo[geometry=-|-]{Car}{Tyre} %
+                    \umlcompo[geometry=-|-]{Car}{Engine} %
+                    \umlinherit[geometry=--]{SUV}{Car} %
+                    \umlaggreg[geometry=|-]{School}{Student} %
+                    \umldep[geometry=--]{Student}{Bicycle} %
+                    \umlassoc[geometry=--]{Student}{ID} %
+                \end{tikzpicture}
+            \end{center}
+        \end{block}
+    \end{frame}
 
     \section{小结}
 
