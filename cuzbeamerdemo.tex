@@ -116,9 +116,9 @@
                     \toprule
                     \multicolumn{2}{c}{项目} & \multirow{2}{*}{价格 (\$)} \\
                     \cmidrule(r){1-2}
-                    动物 & 描述 &  \\
+                    动物                    & 描述 &  \\
                     \midrule
-                    \multirow{2}{*}{蚋蚊} & 每克 & 13.65 \\
+                    \multirow{2}{*}{蚋蚊}   & 每克 & 13.65 \\
                                             & 每只 & 0.01 \\
                     角马                    & 标本 & 92.50 \\
                     鸸鹋                    & 标本 & 33.33 \\
@@ -131,7 +131,8 @@
     \end{fragile}
 
     \begin{fragile}[]
-        \bicolumns[0.5]{
+        \bicolumns[0.382]{
+        }{
             \begin{block}{代码}
                 \begin{minted}{c++}
                     // 西加加
@@ -150,17 +151,17 @@
                         }
                     }
                 \end{minted}
-                % \begin{minted}{python}
-                %     # 蟒蛇，测试数学公式：$\int_{-\infty}^{+\infty}{f(x)\mathrm{d}x}$
-                %     print('Test')
-                % \end{minted}
+                \begin{minted}{python}
+                    # 蟒蛇，测试数学公式：$\int_{-\infty}^{+\infty}{f(x)\mathrm{d}x}$
+                    print('Test')
+                \end{minted}
             \end{block}
+        }
+    \end{fragile}
+
+    \begin{fragile}[]
+        \bicolumns[0.382]{
         }{
-            \begin{block}{参考文献}
-                \begin{itemize}
-                    \item 可按如下方式引用参考文献：\cite{cheng2007dahua,cooper2007face,freeman2004head,gamma1994design,graham2004hackers,norman2013design,nystrom2014game,williams2014non}
-                \end{itemize}
-            \end{block}
             \begin{block}{算法}
                 \begin{algorithmx}[alg:euclid]{Euclid算法}
                     \Procedure{Euclid}{$a,b$}\Comment{$a$与$b$的最大公约数}
@@ -176,6 +177,14 @@
             \end{block}
         }
     \end{fragile}
+
+    \begin{frame}
+        \begin{block}{参考文献}
+            \begin{itemize}
+                \item 可按如下方式引用参考文献：\cite{cheng2007dahua,cooper2007face,freeman2004head,gamma1994design,graham2004hackers,norman2013design,nystrom2014game,williams2014non}
+            \end{itemize}
+        \end{block}
+    \end{frame}
 
     \begin{frame}
         \begin{block}{类图}
@@ -289,6 +298,8 @@
     \end{standout}
 
     \appendix
+
+    \section{附录}
 
     \begin{frame}[allowframebreaks]{参考文献}
         \bibliography{cuzbeamerdemo}
