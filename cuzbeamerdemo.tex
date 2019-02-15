@@ -1,5 +1,7 @@
 \documentclass{styles/cuzbeamer}
 
+\usepackage[scale=2]{ccicons}
+
 \begin{document}
     \input{initialization.tex}
     \maketitle
@@ -37,7 +39,7 @@
 
     \begin{frame}
         \begin{columns}[T,onlytextwidth]
-            \column{0.3\textwidth}
+            \column{0.33\textwidth}
             \begin{block}{普通标题}
                 \begin{itemize}
                     \item 普通内容
@@ -45,7 +47,15 @@
                     \item 普通内容
                 \end{itemize}
             \end{block}
-            \column{0.3\textwidth}
+            \metroset{block=fill}
+            \begin{block}{普通标题}
+                \begin{itemize}
+                    \item 普通内容
+                    \item 普通内容
+                    \item 普通内容
+                \end{itemize}
+            \end{block}
+            \column{0.33\textwidth}
             \begin{alertblock}{警告标题}
                 \begin{enumerate}
                     \item 警告内容
@@ -53,13 +63,29 @@
                     \item 警告内容
                 \end{enumerate}
             \end{alertblock}
-            \column{0.3\textwidth}
-            \begin{exampleblock}{例子标题}
+            \metroset{block=fill}
+            \begin{alertblock}{警告标题}
                 \begin{enumerate}
-                    \item 例子内容
-                    \item 例子内容
-                    \item 例子内容
+                    \item 警告内容
+                    \item 警告内容
+                    \item 警告内容
                 \end{enumerate}
+            \end{alertblock}
+            \column{0.33\textwidth}
+            \begin{exampleblock}{例子标题}
+                \begin{description}
+                    \item[描述定义] 描述内容
+                    \item[描述定义] 描述内容
+                    \item[描述定义] 描述内容
+                \end{description}
+            \end{exampleblock}
+            \metroset{block=fill}
+            \begin{exampleblock}{例子标题}
+                \begin{description}
+                    \item[描述定义] 描述内容
+                    \item[描述定义] 描述内容
+                    \item[描述定义] 描述内容
+                \end{description}
             \end{exampleblock}
         \end{columns}
     \end{frame}
@@ -199,6 +225,15 @@
       \end{fragile}
 
     \section{小结}
+
+    \begin{frame}{}
+        \begin{leftbar}
+            本模板本身遵循如下
+            \href{http://creativecommons.org/licenses/by-sa/4.0/}{署名-相同方式
+            共享4.0国际许可证（CC BY-SA 4.0）}：
+            \begin{center}\ccbysa\end{center}
+        \end{leftbar}
+    \end{frame}
 
     \begin{standout}[]
         谢谢观看！
