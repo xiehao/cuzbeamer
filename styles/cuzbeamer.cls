@@ -161,6 +161,17 @@
     \end{frame}
 }%
 %-
+%-> The new algorithmx environment for algorithms
+%-
+\newenvironment{algorithmx}[2][]{%
+    \begin{algorithm}[H]
+        \caption{#2}%\label{#1}
+        \begin{algorithmic}[1]
+}{%
+        \end{algorithmic}
+    \end{algorithm}
+}%
+%-
 %-> The new bicolumns macro for two columns environment
 %-> NOTE:
 %-> 1. This command MUST be used within the fragile environment,
@@ -347,6 +358,9 @@
 }
 \RequirePackage{algpseudocode,algorithm,algorithmicx}% algorithm support
 \algrenewcommand\ALG@beginalgorithmic{\footnotesize}% font size of algorithms
+\algrenewcommand\algorithmiccomment[2][\scriptsize\ttfamily]{
+    {#1\hfill\(\triangleright\) #2}% font size of comments in algorithms
+}
 \captionsetup[algorithm]{font=footnotesize}% font size of algorithm captions
 %---------------------------------------------------------------------------%
 %->> Customize the alignment of elements at the cover page

@@ -124,20 +124,17 @@
             \end{block}
         }{
             \begin{block}{算法}
-                \begin{algorithm}[H]
-                    \caption{Euclid算法}
-                    \begin{algorithmic}[1]\label{alg:euclid}
-                        \Procedure{Euclid}{$a,b$}\Comment{$a$与$b$的最大公约数}
-                        \State $r\gets a\bmod b$
-                        \While{$r\not=0$}\Comment{若$r$为0则可跳出循环返回答案}
-                        \State $a\gets b$
-                        \State $b\gets r$
-                        \State $r\gets a\bmod b$
-                        \EndWhile\label{euclidendwhile}
-                        \State \textbf{return} $b$\Comment{最大公约数为$b$}
-                        \EndProcedure
-                    \end{algorithmic}
-                \end{algorithm}
+                \begin{algorithmx}[alg:euclid]{Euclid算法}
+                    \Procedure{Euclid}{$a,b$}\Comment{$a$与$b$的最大公约数}
+                    \State $r\gets a\bmod b$
+                    \While{$r\neq 0$}\Comment{若$r$为0则可跳出循环返回答案}
+                    \State $a\gets b$
+                    \State $b\gets r$
+                    \State $r\gets a\bmod b$
+                    \EndWhile\label{euclidendwhile}
+                    \State \textbf{return} $b$\Comment{最大公约数为$b$}
+                    \EndProcedure
+                \end{algorithmx}
             \end{block}
         }
     \end{fragile}
