@@ -150,12 +150,17 @@
                         }
                     }
                 \end{minted}
-                \begin{minted}{python}
-                    # 蟒蛇，测试数学公式：$\int_{-\infty}^{+\infty}{f(x)\mathrm{d}x}$
-                    print('Test')
-                \end{minted}
+                % \begin{minted}{python}
+                %     # 蟒蛇，测试数学公式：$\int_{-\infty}^{+\infty}{f(x)\mathrm{d}x}$
+                %     print('Test')
+                % \end{minted}
             \end{block}
         }{
+            \begin{block}{参考文献}
+                \begin{itemize}
+                    \item 可按如下方式引用参考文献：\cite{cheng2007dahua,cooper2007face,freeman2004head,gamma1994design,graham2004hackers,norman2013design,nystrom2014game,williams2014non}
+                \end{itemize}
+            \end{block}
             \begin{block}{算法}
                 \begin{algorithmx}[alg:euclid]{Euclid算法}
                     \Procedure{Euclid}{$a,b$}\Comment{$a$与$b$的最大公约数}
@@ -236,7 +241,14 @@
     \end{frame}
 
     \begin{standout}[]
-        谢谢观看！
+        感谢聆听！
     \end{standout}
+
+    \appendix
+
+    \begin{frame}[allowframebreaks]{参考文献}
+        \bibliography{cuzbeamerdemo}
+        \bibliographystyle{unsrt}
+    \end{frame}
 
 \end{document}
