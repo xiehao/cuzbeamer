@@ -345,6 +345,7 @@
     \tikzstyle{every new ->} = [ shorten >= 1pt ] %
     \tikzstyle{graphs/every graph} = [ edges = rounded corners ] %
 }
+\RequirePackage{algpseudocode,algorithm,algorithmicx}% algorithm
 %---------------------------------------------------------------------------%
 %->> Customize the alignment of elements at the cover page
 %---------------------------------------------------------------------------%

@@ -98,8 +98,8 @@
     \end{fragile}
 
     \begin{fragile}[]
-        \begin{block}{代码}
-            \bicolumns[0.5]{
+        \bicolumns[0.5]{
+            \begin{block}{代码}
                 \begin{minted}{c++}
                     // 西加加
                     #include <iostream>
@@ -121,9 +121,26 @@
                     # 蟒蛇，测试数学公式：$\int_{-\infty}^{+\infty}{f(x)\mathrm{d}x}$
                     print('Test')
                 \end{minted}
-            }{
-            }
-        \end{block}
+            \end{block}
+        }{
+            \begin{block}{算法}
+                \begin{algorithm}[H]
+                    \footnotesize
+                    \caption{Euclid算法}\label{alg:euclid}
+                    \begin{algorithmic}[1]
+                        \Procedure{Euclid}{$a,b$}\Comment{$a$与$b$的最大公约数}
+                        \State $r\gets a\bmod b$
+                        \While{$r\not=0$}\Comment{若$r$为0则可跳出循环返回答案}
+                        \State $a\gets b$
+                        \State $b\gets r$
+                        \State $r\gets a\bmod b$
+                        \EndWhile\label{euclidendwhile}
+                        \State \textbf{return} $b$\Comment{最大公约数为$b$}
+                        \EndProcedure
+                    \end{algorithmic}
+                \end{algorithm}
+            \end{block}
+        }
     \end{fragile}
 
     \begin{frame}
