@@ -25,7 +25,9 @@
 \DeclareStringOption[dark]{colortheme}[dark]% light or dark (default)
 \DeclareStringOption[wide]{pagestyle}[wide]% normal, wide (default) or wider
 \DeclareStringOption[left]{titlealignment}[left]% left, center or right (default)
-\DeclareBoolOption[true]{minted}% use minted package
+\DeclareBoolOption[true]{minted}% use minted package (default) or not
+\DeclareBoolOption[false]{algorithm}% use algorithm package bundle or not (default)
+\DeclareBoolOption[false]{pgfplots}% use pgfplots package or not (default)
 \DeclareDefaultOption{%
     \PassOptionsToClass{\CurrentOption}{beamer}%
 }%
@@ -163,14 +165,16 @@
 %-
 %-> The new algorithmx environment for algorithms
 %-
-\newenvironment{algorithmx}[2][]{%
-    \begin{algorithm}[H]
-        \caption{#2}%\label{#1}
-        \begin{algorithmic}[1]
-}{%
-        \end{algorithmic}
-    \end{algorithm}
-}%
+\ifcuz@option@algorithm
+    \newenvironment{algorithmx}[2][]{%
+        \begin{algorithm}[H]
+            \caption{#2}%\label{#1}
+            \begin{algorithmic}[1]
+    }{%
+            \end{algorithmic}
+        \end{algorithm}
+    }%
+\fi
 %-
 %-> The new bicolumns macro for two columns environment
 %-> NOTE:
@@ -356,12 +360,18 @@
     \tikzstyle{every new ->} = [ shorten >= 1pt ] %
     \tikzstyle{graphs/every graph} = [ edges = rounded corners ] %
 }
-\RequirePackage{algpseudocode,algorithm,algorithmicx}% algorithm support
-\algrenewcommand\ALG@beginalgorithmic{\footnotesize}% font size of algorithms
-\algrenewcommand\algorithmiccomment[2][\scriptsize\ttfamily]{
-    {#1\hfill\(\triangleright\) #2}% font size of comments in algorithms
-}
-\captionsetup[algorithm]{font=footnotesize}% font size of algorithm captions
+\ifcuz@option@algorithm%
+    \RequirePackage{algpseudocode,algorithm,algorithmicx}% algorithm support
+    \algrenewcommand\ALG@beginalgorithmic{\footnotesize}% font size of algorithms
+    \algrenewcommand\algorithmiccomment[2][\scriptsize\ttfamily]{
+        {#1\hfill\(\triangleright\) #2}% font size of comments in algorithms
+    }
+    \captionsetup[algorithm]{font=footnotesize}% font size of algorithm captions
+\fi%
+\ifcuz@option@pgfplots%
+    \usepackage{pgfplots}
+    \usepgfplotslibrary{dateplot}
+\fi%
 %---------------------------------------------------------------------------%
 %->> Customize the alignment of elements at the cover page
 %---------------------------------------------------------------------------%

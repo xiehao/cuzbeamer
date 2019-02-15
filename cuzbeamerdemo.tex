@@ -1,4 +1,4 @@
-\documentclass{styles/cuzbeamer}
+\documentclass[algorithm,pgfplots]{styles/cuzbeamer}
 
 \usepackage[scale=2]{ccicons}
 
@@ -227,16 +227,60 @@
                 \end{tikzpicture}
             \end{center}
         \end{block}
-      \end{fragile}
+    \end{fragile}
+
+    \begin{frame}
+        \begin{block}{折线图}
+            \begin{figure}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        mlineplot,
+                        width=0.9\textwidth,
+                        height=6cm,
+                    ]
+                    \addplot {sin(deg(x))};
+                    \addplot+[samples=100] {sin(deg(2*x))};
+                    \end{axis}
+                \end{tikzpicture}
+            \end{figure}
+        \end{block}
+    \end{frame}
+
+    \begin{frame}
+        \begin{block}{柱状图}
+            \begin{figure}
+                \begin{tikzpicture}
+                    \begin{axis}[
+                        mbarplot,
+                        xlabel={横},
+                        ylabel={纵},
+                        width=0.9\textwidth,
+                        height=6cm,
+                    ]
+                    \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
+                    \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
+                    \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
+                    \legend{甲, 乙, 丙}
+                    \end{axis}
+                \end{tikzpicture}
+            \end{figure}
+        \end{block}
+    \end{frame}
 
     \section{小结}
 
     \begin{frame}{}
         \begin{leftbar}
+            您可通过如下链接获取本beamer模板与相应的示例文件：\par
+            \begin{center}
+                \href{https://github.com/xiehao/CUZ-beamer}{https://github.com/xiehao/CUZ-beamer}
+            \end{center}
             本模板本身遵循如下
             \href{http://creativecommons.org/licenses/by-sa/4.0/}{署名-相同方式
             共享4.0国际许可证（CC BY-SA 4.0）}：
-            \begin{center}\ccbysa\end{center}
+            \begin{center}
+                \ccbysa
+            \end{center}
         \end{leftbar}
     \end{frame}
 
