@@ -345,7 +345,9 @@
     \tikzstyle{every new ->} = [ shorten >= 1pt ] %
     \tikzstyle{graphs/every graph} = [ edges = rounded corners ] %
 }
-\RequirePackage{algpseudocode,algorithm,algorithmicx}% algorithm
+\RequirePackage{algpseudocode,algorithm,algorithmicx}% algorithm support
+\algrenewcommand\ALG@beginalgorithmic{\footnotesize}% font size of algorithms
+\captionsetup[algorithm]{font=footnotesize}% font size of algorithm captions
 %---------------------------------------------------------------------------%
 %->> Customize the alignment of elements at the cover page
 %---------------------------------------------------------------------------%

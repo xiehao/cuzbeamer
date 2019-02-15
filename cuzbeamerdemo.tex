@@ -125,9 +125,8 @@
         }{
             \begin{block}{算法}
                 \begin{algorithm}[H]
-                    \footnotesize
-                    \caption{Euclid算法}\label{alg:euclid}
-                    \begin{algorithmic}[1]
+                    \caption{Euclid算法}
+                    \begin{algorithmic}[1]\label{alg:euclid}
                         \Procedure{Euclid}{$a,b$}\Comment{$a$与$b$的最大公约数}
                         \State $r\gets a\bmod b$
                         \While{$r\not=0$}\Comment{若$r$为0则可跳出循环返回答案}
