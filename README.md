@@ -61,7 +61,7 @@ When importing this `cuzbeamer` class in the main `.tex` files, several options 
 - `[titlealignment=left/center/right]`: a string option, set the alignment of elements (e.g. title, subtitle, author, date, etc.) in the title page, `left` (the default), `center` or `right`;
 - `[minted=true/false]`: a boolean option, set for whether to include codes in the slides, `true` by default;
 - `[algorithm=true/false]`: a boolean option, set for whether to use algorithm environments, `false` by default;
-- `[pgfplots=true/false]`: a boolean option, set for whether to use `pgfplots` package to plot figures.
+- `[pgfplots=true/false]`: a boolean option, set for whether to use `pgfplots` package to plot figures, `false` by default.
 
 ## License
 
