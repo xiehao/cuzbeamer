@@ -116,11 +116,14 @@
         % \setsansfont[NFSSFamily=entextsf]{TeX Gyre Heros}% an alternative of Helvetica
         \setmonofont[NFSSFamily=entexttt]{Ubuntu Mono}%{TeX Gyre Cursor}% an alternative of Courier New
     \else
-        \setmainfont[NFSSFamily=entextrm]{Palatino Linotype}% Times New Roman
-        \setsansfont[NFSSFamily=entextsf]{Palatino Linotype}% Helvetica
         \ifcuz@windows%
+            \setmainfont[NFSSFamily=entextrm]{Palatino Linotype}% Times New Roman
+            \setsansfont[NFSSFamily=entextsf]{Palatino Linotype}% Helvetica
             \setmonofont[NFSSFamily=entexttt]{Consolas}%
-        \else% for mac
+        \fi% for mac
+        \ifcuz@mac
+            \setmainfont[NFSSFamily=entextrm]{Palatino}% Times New Roman
+            \setsansfont[NFSSFamily=entextsf]{Palatino}% Helvetica
             \setmonofont[NFSSFamily=entexttt]{Monaco}%
         \fi
     \fi
