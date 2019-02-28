@@ -1,6 +1,10 @@
 # `cuzbeamer`
 
-This is a LaTeX template based on the [`metropolis`](https://github.com/matze/mtheme) beamer theme, and customized for the convenience of making slides for Communication University of Zhejiang.
+This is a LaTeX template based on the [`metropolis`](https://github.com/matze/mtheme) beamer theme, and customized for the convenience of making slides for Communication University of Zhejiang (CUZ).
+
+### Related Repo
+
+- [cuzthesis](https://github.com/xiehao/cuzthesis): a LaTeX thesis template for CUZ students.
 
 ## Project Structure
 
