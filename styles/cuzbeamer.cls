@@ -109,24 +109,24 @@
     \ifcuz@xetex
         \RequirePackage{xeCJK}% support calling system fonts
     \fi
-    \ifcuz@linux
-        \setmainfont{Ubuntu}
-        \setsansfont{Ubuntu}
-        \setmonofont{Ubuntu Mono}
-        % \setmainfont[NFSSFamily=entextrm]{TeX Gyre Termes}% an alternative of Times New Roman
-        % \setsansfont[NFSSFamily=entextsf]{TeX Gyre Heros}% an alternative of Helvetica
-        % \setmonofont[NFSSFamily=entexttt]{Ubuntu Mono}%{TeX Gyre Cursor}% an alternative of Courier New
-    \else
-        \ifcuz@windows%
-            \setmainfont{Palatino Linotype}% Times New Roman
-            \setsansfont{Palatino Linotype}% Helvetica
-            \setmonofont{Consolas}%
-        \else% for mac
-            \setmainfont{Palatino}% Times New Roman
-            \setsansfont{Palatino}% Helvetica
-            \setmonofont{Monaco}%
-        \fi
-    \fi
+    \setmainfont{Ubuntu}
+    \setsansfont{Ubuntu}
+    \setmonofont{Ubuntu Mono}
+    % \ifcuz@linux
+    %     \setmainfont[NFSSFamily=entextrm]{TeX Gyre Termes}% an alternative of Times New Roman
+    %     \setsansfont[NFSSFamily=entextsf]{TeX Gyre Heros}% an alternative of Helvetica
+    %     \setmonofont[NFSSFamily=entexttt]{TeX Gyre Cursor}% an alternative of Courier New
+    % \else
+    %     \ifcuz@windows%
+    %         \setmainfont{Palatino Linotype}% Times New Roman
+    %         \setsansfont{Palatino Linotype}% Helvetica
+    %         \setmonofont{Consolas}%
+    %     \else% for mac
+    %         \setmainfont{Palatino}% Times New Roman
+    %         \setsansfont{Palatino}% Helvetica
+    %         \setmonofont{Monaco}%
+    %     \fi
+    % \fi
 \fi
 %---------------------------------------------------------------------------%
 %->> Some code to be executed at the beginning of the document

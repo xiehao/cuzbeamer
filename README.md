@@ -37,6 +37,7 @@ Users are supposed to add new `.tex` files at the same level of `demo.tex`, and 
 To use this class:
 
 - A LaTeX environment is required ([TeX Live](https://www.tug.org/texlive/) is highly recommended);
+- The [Ubuntu font](https://design.ubuntu.com/font/) is required to show beautiful non-CJK characters;
 - [Optional] If codes are to be shown, the `minted` package is used (the `minted` option should be switched on, se below), which then requires a Python 3 environment, with the `pygments` installed:
 
     ``` bash
