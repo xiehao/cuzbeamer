@@ -6,7 +6,7 @@ This is a LaTeX template based on the [`metropolis`](https://github.com/matze/mt
 
 The structure of this project is shown and explained below:
 
-```
+```bash
 CUZbeamer
 ├── demo.pdf
 ├── demo.tex
@@ -38,6 +38,7 @@ To use this class:
 
 - A LaTeX environment is required ([TeX Live](https://www.tug.org/texlive/) is highly recommended);
 - [Optional] If codes are to be shown, the `minted` package is used (the `minted` option should be switched on, se below), which then requires a Python 3 environment, with the `pygments` installed:
+
     ``` bash
     > pip install pygments
     ```
