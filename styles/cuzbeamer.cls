@@ -237,7 +237,7 @@
         autogobble,% automatically remove the spaces to the left of the code
         linenos=true,% show line numbers
         fontsize=\footnotesize,% smaller font size
-        escapeinside=@@,% insert latex code between @ and @
+        % escapeinside=@@,% insert latex code between @ and @
         frame=lines,% frame styles: none or lines
         % numbers=both,% show line numbers on: left, right, both or none
         mathescape=true,% insert math code
