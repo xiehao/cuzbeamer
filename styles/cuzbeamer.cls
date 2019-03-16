@@ -223,7 +223,7 @@
 %---------------------------------------------------------------------------%
 %->> Useful packages for some basic elements
 %---------------------------------------------------------------------------%
-\RequirePackage{ctable,multirow}% captions in tables (using booktabs)
+\RequirePackage{ctable,multirow,multicol}% captions in tables (using booktabs)
 \RequirePackage{caption}% extra caption features
 \graphicspath{{./images/}}% set the default graphic path
 \ifcuz@option@minted%
