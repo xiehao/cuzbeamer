@@ -319,6 +319,8 @@
     \tikzstyle{vh path} = [ to path = { |- (\tikztotarget) } ] %
     \tikzstyle{every new ->} = [ shorten >= 1pt ] %
     \tikzstyle{graphs/every graph} = [ edges = rounded corners ] %
+    \tikzstyle{every picture} += [remember picture]
+    \tikzstyle{na} = [baseline = -.5ex]
 }{
     \tikzstyle{terminal} = [
         rounded rectangle, thin,
@@ -362,6 +364,8 @@
     \tikzstyle{vh path} = [ to path = { |- (\tikztotarget) } ] %
     \tikzstyle{every new ->} = [ shorten >= 1pt ] %
     \tikzstyle{graphs/every graph} = [ edges = rounded corners ] %
+    \tikzstyle{every picture} += [remember picture]
+    \tikzstyle{na} = [baseline = -.5ex]
 }
 \ifcuz@option@algorithm%
     \RequirePackage{algpseudocode,algorithm,algorithmicx}% algorithm support
