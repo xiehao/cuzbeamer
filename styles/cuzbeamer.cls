@@ -47,8 +47,7 @@
 }{%
     \PassOptionsToClass{aspectratio=169}{beamer}%
 }}%
-\LoadClass[UTF8,10pt]{beamer}%
-\RequirePackage[zihao=false]{ctex}%
+\LoadClass[UTF8,10pt,professionalfont,zihao=false]{ctexbeamer}%
 %---------------------------------------------------------------------------%
 %->> Theme configuration
 %---------------------------------------------------------------------------%
@@ -103,7 +102,6 @@
     \RequirePackage[utf8]{inputenc}% set input encoding, document must use utf-8 encoding
     \RequirePackage[T1]{fontenc}% set font encoding to enable modern font encoding
     \RequirePackage{newtxtext}%
-    \RequirePackage[cmintegrals]{newtxmath}% load after math packages
 \else
     \RequirePackage{fontspec}% support calling system fonts
     \ifcuz@xetex
@@ -128,6 +126,7 @@
     %     \fi
     % \fi
 \fi
+\RequirePackage[libertine,liby,libaltvw]{newtxmath}% load after math packages
 %---------------------------------------------------------------------------%
 %->> Some code to be executed at the beginning of the document
 %---------------------------------------------------------------------------%

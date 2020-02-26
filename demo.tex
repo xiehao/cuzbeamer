@@ -103,15 +103,6 @@
         }{
         \begin{block}{表格}
             \begin{table}\small
-                % \caption{样表}
-                % \caption*{
-                %   表例里甚至可以加表格：
-                %   \begin{tabular}{l l}
-                %     \toprule
-                %     第一项 & 解释一 \\
-                %     \bottomrule
-                %   \end{tabular}
-                % }
                 \begin{tabular}{llr}
                     \toprule
                     \multicolumn{2}{c}{项目} & \multirow{2}{*}{价格 (\$)} \\
@@ -130,6 +121,17 @@
         }
     \end{fragile}
 
+    \begin{fragile}
+        \bicolumns[0.382]{}{
+            \begin{block}{公式}
+                \begin{align}
+                    e^{i\vartheta}&=\cos{\vartheta}+i\sin{\vartheta}\nonumber\\
+                    \rho(R,\phi)&\sim\int_{-\infty}^{+\infty}\dfrac{\tilde{W}_{n}(\gamma)\exp{\left[\iota\frac{R}{a}\left(\sqrt{k^{2}a^{2}-\gamma^{2}}\right)\right]}\cos{\phi}}{\left(k^{2}a^{2}-\gamma^{2}\right)^{3/4}H_{n}^{\prime(1)}\left(\sqrt{k^{2}a^{2}-\gamma^{2}}\right)}\mathrm{d}\gamma
+                \end{align}
+            \end{block}
+        }
+    \end{fragile}
+
     \begin{fragile}[]
         \bicolumns[0.382]{
         }{
@@ -145,7 +147,7 @@
                 \end{minted}
                 \begin{minted}{java}
                     // 爪哇
-                    class Test {
+                    public class Test {
                         public static void main(String[] args) {
                             System.out.println("Test");
                         }
