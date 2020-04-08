@@ -136,9 +136,9 @@
     %-> The university logo in the title page
     %-
     \ifxstringequal{\cuz@option@colortheme}{light}{%
-        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{images/cuzlogo}}%
+        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{cuzlogo}}%
     }{%
-        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{images/cuzlogo-brown}}%
+        \titlegraphic{\hfill\includegraphics[width=0.28\textwidth]{cuzlogo-brown}}%
     }%
     \makeatother
 }
@@ -241,9 +241,12 @@
         % numbers=both,% show line numbers on: left, right, both or none
         mathescape=true,% insert math code
     }%
+    \setmintedinline{%
+        fontsize=\normalsize,
+    }%
 \fi
-\RequirePackage{styles/tikz-uml}% tikz-uml for diagrams (class, use case,
-                                % state transitions, sequence and component)
+\RequirePackage{tikz-uml}% tikz-uml for diagrams (class, use case,
+                         % state transitions, sequence and component)
 \ifxstringequal{\cuz@option@colortheme}{light}{
     \tikzumlset{%
         % text=white,
