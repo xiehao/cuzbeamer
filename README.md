@@ -12,29 +12,27 @@ The structure of this project is shown and explained below:
 
 ```bash
 CUZbeamer
+├── cuzbeamer
+│   ├── cuzbeamer.cls
+│   ├── images
+│   │   ├── cuzlogo-brown.pdf
+│   │   ├── cuzlogo-dark.pdf
+│   │   ├── cuzlogo-light.pdf
+│   │   └── cuzlogo.pdf
+│   └── tikz-uml.sty
 ├── demo.pdf
 ├── demo.tex
-├── images
-│   ├── cuzlogo-brown.pdf
-│   ├── cuzlogo-dark.pdf
-│   ├── cuzlogo-light.pdf
-│   ├── cuzlogo.pdf
-│   └── ...
 ├── initialization.tex
 ├── README.md
-├── references.bib
-└── styles
-    ├── cuzbeamer.cls
-    └── tikz-uml.sty
+└── references.bib
 ```
 
-- `styles/`: a folder containing the class file `cuzbeamer.cls` and the package `tikz-uml.sty` (written by [Nicolas Kielbasiewicz](http://perso.ensta-paristech.fr/~kielbasi/tikzuml/));
-- `images/`: a folder containing images and figures used by the main `.tex` file (the school logos are also in it, and should not be modified or removed);
-- `initialization.tex`: common info imported by the main `.tex` files, involving: author's name and e-mail, title, subtitle and date, users should assign theses variables beforehand;
+- `cuzbeamer/`: a folder containing the class file `cuzbeamer.cls` and the package `tikz-uml.sty` (written by [Nicolas Kielbasiewicz](http://perso.ensta-paristech.fr/~kielbasi/tikzuml/)), also with the `images/` folder (with school logos in it), this folder should be copied/moved to a default path storing custom tex templates, before using this template;
+- `initialization.tex`: common info imported by a series of `.tex` files, the content includes: author's name and e-mail, title, subtitle and date, users should assign theses variables beforehand;
 - `demo.tex`: the demo source file, showing how to use this `cuzbeamer` class to make a proper set of slides;
 - `references.bib` (optional): the bib file used for `bibtex` to import references.
 
-Users are supposed to add new `.tex` files at the same level of `demo.tex`, and specify their own common info in `initialization.tex`, put necessary image files in `images/` folder and necessary reference items in `references.bib` file if needed; while the file structure is not suggested to be modified.
+Users are supposed to add new `.tex` files at the same level of `demo.tex`, and specify their own common info in `initialization.tex` and necessary reference items in `references.bib` file if needed; while the file structure is not suggested to be modified, unless you know exactly what you are doing.
 
 ## Prerequests
 
@@ -47,6 +45,12 @@ To use this class:
     ``` bash
     > pip install pygments
     ```
+
+## Installation
+
+Users are supposed to copy/move the `cuzbeamer/` folder to the path where the custom latex templates located, eg:
+
+- For Manjaro Linux: `/usr/local/share/texmf/tex/latex`
 
 ## Usage
 
