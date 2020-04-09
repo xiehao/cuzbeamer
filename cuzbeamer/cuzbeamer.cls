@@ -271,12 +271,13 @@
 \usetikzlibrary{%
     intersections,
     through,
-    % shapes.geometric,
-    % shapes.misc,
+    shapes.geometric,
+    shapes.misc,
     positioning,
     calc,
-    % arrows,
-    graphs
+    arrows,
+    graphs,
+    math
 }
 \ifxstringequal{\cuz@option@colortheme}{light}{
     \tikzstyle{terminal} = [
