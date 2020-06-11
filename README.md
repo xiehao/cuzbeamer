@@ -48,9 +48,15 @@ To use this class:
 
 ## Installation
 
-Users are supposed to copy/move the `cuzbeamer/` folder to the path where the custom latex templates located, eg:
+Users are supposed to copy/move the `cuzbeamer/` folder to the path where the custom latex templates located, which could be obtained by:
 
-- For Manjaro Linux: `/usr/local/share/texmf/tex/latex`
+```bash
+> kpsewhich --var-value=TEXMFHOME
+```
+ eg (the `tex/latex` folders should be created if they do not exist):
+
+- For Manjaro Linux: `~/texmf/tex/latex`
+- For macOS: `~/Library/texmf/tex/latex`
 
 ## Usage
 
