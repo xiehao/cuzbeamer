@@ -27,8 +27,8 @@ CUZbeamer
 └── references.bib
 ```
 
-- `cuzbeamer/`: a folder containing the class file `cuzbeamer.cls` and the package `tikz-uml.sty` (written by [Nicolas Kielbasiewicz](http://perso.ensta-paristech.fr/~kielbasi/tikzuml/)), also with the `images/` folder (with school logos in it), this folder should be copied/moved to a default path storing custom tex templates, before using this template;
-- `initialization.tex`: common info imported by a series of `.tex` files, the content includes: author's name and e-mail, title, subtitle and date, users should assign theses variables beforehand;
+- `cuzbeamer/`: a folder containing the class file `cuzbeamer.cls` and the package `tikz-uml.sty` (written by [Nicolas Kielbasiewicz](http://perso.ensta-paristech.fr/~kielbasi/tikzuml/)), also with the `images/` folder (with school logos in it), this folder should be copied/moved to a default path storing custom tex templates, before using this template (see the Installation part);
+- `initialization.tex`: common info imported by a series of `.tex` files, the content includes: author's name and e-mail, title, subtitle and date, users should assign these variables beforehand;
 - `demo.tex`: the demo source file, showing how to use this `cuzbeamer` class to make a proper set of slides;
 - `references.bib` (optional): the bib file used for `bibtex` to import references.
 
@@ -40,7 +40,7 @@ To use this class:
 
 - A LaTeX environment is required ([TeX Live](https://www.tug.org/texlive/) is highly recommended);
 - The [Ubuntu font](https://design.ubuntu.com/font/) is required to show beautiful non-CJK characters;
-- [Optional] If codes are to be shown, the `minted` package is used (the `minted` option should be switched on, se below), which then requires a Python 3 environment, with the `pygments` installed:
+- [Optional] If codes are to be shown, the `minted` package is used (the `minted` option should be switched on, see below), which then requires a Python 3 environment, with the `pygments` installed:
 
     ``` bash
     > pip install pygments
@@ -48,9 +48,15 @@ To use this class:
 
 ## Installation
 
-Users are supposed to copy/move the `cuzbeamer/` folder to the path where the custom latex templates located, eg:
+Users are supposed to copy/move the `cuzbeamer/` folder to the path where the custom latex templates located, which could be obtained by:
 
-- For Manjaro Linux: `/usr/local/share/texmf/tex/latex`
+```bash
+> kpsewhich --var-value=TEXMFHOME
+```
+ eg (the `tex/latex` folders should be created manually if they do not exist):
+
+- For Manjaro Linux: `~/texmf/tex/latex`
+- For macOS: `~/Library/texmf/tex/latex`
 
 ## Usage
 
