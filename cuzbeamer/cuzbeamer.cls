@@ -229,8 +229,14 @@
     \RequirePackage{minted}%
     \ifxstringequal{\cuz@option@colortheme}{light}{%
         \usemintedstyle{friendly}%
+        \setminted{%
+            highlightcolor=lightgray
+        }
     }{%
         \usemintedstyle{monokai}%
+        \setminted{%
+            highlightcolor=darkgray
+        }
     }%
     \setminted{%
         autogobble,% automatically remove the spaces to the left of the code
