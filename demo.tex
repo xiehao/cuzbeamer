@@ -1,6 +1,7 @@
-\documentclass[algorithm,pgfplots]{cuzbeamer}
+\documentclass[algorithm,pgfplots,colortheme=light]{cuzbeamer/cuzbeamer}
 
 \usepackage[scale=2]{ccicons}
+\usepackage{framed}
 
 \begin{document}
     \input{initialization.tex}
@@ -132,30 +133,30 @@
         }
     \end{fragile}
 
-    \begin{fragile}[]
+    \begin{fragile}
         \bicolumns[0.382]{
         }{
             \begin{block}{代码}
-                \begin{minted}{c++}
+                \begin{minted}[escapeinside=@@,beameroverlays]{c++}
                     // 西加加
                     #include <iostream>
                     
                     auto main(int argc, char const **argv) {
-                        std::cout << "Test" << std::endl;
+                        @\alt<2>{\highlightbox{std::cout << \QQ{Test} << std::endl;}}{std::cout << \QQ{Test} << std::endl;}@
                         return 0;
                     }
                 \end{minted}
-                \begin{minted}{java}
+                \begin{minted}[escapeinside=@@,beameroverlays]{java}
                     // 爪哇
                     public class Test {
                         public static void main(String[] args) {
-                            System.out.println("Test");
+                            @\alt<2>{\highlightbox{System.out.println(\QQ{Test});}}{System.out.println(\QQ{Test});}@
                         }
                     }
                 \end{minted}
-                \begin{minted}{python}
+                \begin{minted}[escapeinside=@@,beameroverlays]{python}
                     # 蟒蛇，测试数学公式：$\int_{-\infty}^{+\infty}{f(x)\mathrm{d}x}$
-                    print('Test')
+                    @\alt<2>{\highlightbox{print(\Q{Test})}}{print(\Q{Test})}@
                 \end{minted}
             \end{block}
         }
